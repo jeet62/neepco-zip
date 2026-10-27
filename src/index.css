@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary-blue: #007AFF;
+    --primary-blue-hover: #0062cc;
+    --bg-neutral: #F8FAFC;
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+    background-color: #F8FAFC;
+    color: #0f172a;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.white-solid-card {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.15), 0 4px 15px rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+}
+
+.white-glass-input-pill {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  height: 56px;
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.white-glass-input-pill:focus {
+  outline: none;
+  border-color: #007AFF;
+  box-shadow: 0 0 0 3.5px rgba(0, 122, 255, 0.14);
+}
+
+.segmented-control-container {
+  display: inline-flex;
+  align-items: center;
+  height: 46px;
+  padding: 4px;
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.segmented-option-active {
+  background-color: #007AFF;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 9px;
+  box-shadow: 0 2px 6px rgba(0, 122, 255, 0.25);
+}
+
+.segmented-option-inactive {
+  color: #475569;
+  font-weight: 500;
+}
+
+.segmented-option-inactive:hover {
+  color: #0f172a;
+}
+
+.hero-container-expanded {
+  height: 720px;
+  min-height: 720px;
+  transition: all 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.hero-container-shrunk {
+  height: 195px;
+  min-height: 195px;
+  transition: all 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.header-bg-subtle-blur {
+  transition: opacity 1.2s ease-in-out;
+  filter: brightness(1.04) contrast(1.02);
+  image-rendering: -webkit-optimize-contrast;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-vertical-gradient-overlay {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.localized-heading-gradient {
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 80%);
+}
+
+.text-glass-container {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-down {
+  animation: fadeDown 450ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 450ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUpFade 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.govt-tab-active {
+  background-color: #ffffff;
+  color: #1e3a8a;
+  font-weight: 700;
+  border: 1px solid #cbd5e1;
+  border-bottom: 2px solid #1e3a8a;
+  border-radius: 4px 4px 0 0;
+  padding: 8px 16px;
+  position: relative;
+  top: 1px;
+}
+
+.govt-tab-inactive {
+  background-color: #f1f5f9;
+  color: #475569;
+  font-weight: 600;
+  border: 1px solid #cbd5e1;
+  border-bottom: 1px solid #cbd5e1;
+  border-radius: 4px 4px 0 0;
+  padding: 8px 16px;
+  transition: all 0.15s ease-in-out;
+}
+
+.govt-tab-inactive:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.enterprise-card {
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  box-shadow: none;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-container, .print-container * {
+    visibility: visible;
+  }
+  .print-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    color: #000000 !important;
+    background: #ffffff !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
